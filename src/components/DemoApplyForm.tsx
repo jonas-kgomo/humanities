@@ -531,7 +531,7 @@ export function DemoApplyForm() {
         body: JSON.stringify({
           name: name || "Skip Tester",
           email: email || "skip@example.com",
-          affiliation: affiliation || "CDH demo";
+          affiliation: affiliation || "CDH demo",
           role: role || applicantRoles[0],
           region: region || "Testland",
           projects: projects.length ? projects : [fellowshipProjects[0]!.title],
