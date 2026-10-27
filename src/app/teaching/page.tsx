@@ -7,16 +7,16 @@ import { curriculumModules, teachings } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Teaching",
   description:
-    "Shared curriculum modules, unit outlines, readings, and partner seminars across the Centre for Digital Humanities consortium.",
+    "Lab seminars and method modules on agency, interpretation, and knowledge institutions.",
 };
 
 export default function TeachingPage() {
   return (
     <>
       <PageHero
-        eyebrow="Teaching & Research"
-        title="A shared curriculum for digital humanities."
-        lead="Five modules structure both teaching and research — historical, philosophical, literary and linguistic, artistic, and social inquiry with technical design and evaluation. The full outline and readings sit on this page."
+        eyebrow="Teaching"
+        title="Seminars beside the method modules."
+        lead="The research programme sets the questions. These modules train method — archives, interpretation, language, form, and evaluation — so a project can stay bounded and contestable."
       />
 
       <nav
@@ -123,9 +123,9 @@ export default function TeachingPage() {
       </section>
 
       <Section
-        eyebrow="Partner seminars"
-        title="Courses that travel across institutions."
-        lead="Consortium partners teach graduate seminars and reading groups that feed into the shared curriculum."
+        eyebrow="Lab seminars"
+        title="The people, teaching what they actually work on."
+        lead="Diana keeps the philosophical line at Loyola. Ana Paula takes privacy and cross-border data. Sombo takes public finance and southern African institutions."
         className="border-t border-line"
       >
         <div className="divide-y divide-line border-y border-line">
@@ -157,13 +157,19 @@ export default function TeachingPage() {
       <Section
         eyebrow="For students"
         title="How to get involved."
-        lead="If you are a postgraduate researcher, early-career scholar, or practitioner interested in digital humanities, start with our readings and fellowship programme."
+        lead="If you are a postgraduate researcher, early-career scholar, or practitioner working on these questions, start with the research programme, the readings, or the fellowship."
         className="border-t border-line"
       >
         <div className="flex flex-wrap gap-4">
           <Link
-            href="/readings"
+            href="/research"
             className="inline-flex items-center justify-center bg-ink px-5 py-3 font-sans text-sm font-semibold text-paper transition-transform duration-150 hover:bg-accent active:scale-[0.98]"
+          >
+            Research programme
+          </Link>
+          <Link
+            href="/readings"
+            className="inline-flex items-center justify-center border border-line-strong px-5 py-3 font-sans text-sm font-semibold text-ink transition-colors duration-200 hover:border-ink"
           >
             Browse readings
           </Link>

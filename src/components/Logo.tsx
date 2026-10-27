@@ -5,7 +5,7 @@ type MarkProps = {
 
 /**
  * Media Lab–style mark: a few hard-edged colour blocks on a tight grid.
- * Four blocks — one per consortium partner — meeting at the centre.
+ * Four blocks meeting at the centre — the lab mark.
  */
 export function Mark({ className = "", size = 28 }: MarkProps) {
   return (
@@ -44,7 +44,7 @@ export function Wordmark({
             Centre for
           </span>
           <span className="mt-[0.2em] font-sans text-[1.05rem] font-semibold tracking-[-0.03em] text-ink">
-            Digital Humanities
+            Humanities & Technology
           </span>
         </span>
         {showPartners && (
@@ -54,7 +54,7 @@ export function Wordmark({
               aria-hidden="true"
             />
             <span className="hidden sm:block mb-0.5 font-sans text-[0.7rem] font-medium tracking-[0.16em] uppercase text-mute leading-none">
-              Consortium
+              Lab
             </span>
           </>
         )}

@@ -7,7 +7,7 @@ import { symposiumActivities } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Symposium",
   description:
-    "The Digital Humanities Symposium — an international gathering for research, collaboration, and field priorities.",
+    "The Humanities and Technology Symposium — an international gathering for research, collaboration, and field priorities.",
 };
 
 export default function SymposiumPage() {
@@ -15,7 +15,7 @@ export default function SymposiumPage() {
     <>
       <PageHero
         eyebrow="Symposium"
-        title="Digital Humanities Symposium."
+        title="Humanities and Technology Symposium."
         lead="A focused international gathering for fellows, invited scholars, designers, archivists, technical collaborators, and philanthropic organisations — distinct from the residency itself."
       />
 
@@ -23,15 +23,15 @@ export default function SymposiumPage() {
         <div className="prose-cdm max-w-3xl">
           <p>
             Where the fellowship is a residency for a cohort, the symposium is
-            the field&apos;s public room: presenting new research, testing
-            ideas across disciplines, and identifying emerging priorities for
-            digital humanities work.
+            the field&apos;s public room: presenting work from the three
+            strands, testing it across disciplines, and naming what still needs
+            to be built or refused.
           </p>
           <p>
             It typically follows the residency calendar so fellows can bring
             work-in-progress into conversation with a wider community — but the
             symposium stands on its own as an annual convening of the
-            consortium and its partners.
+            lab and its collaborators.
           </p>
         </div>
       </section>
@@ -73,7 +73,7 @@ export default function SymposiumPage() {
           <div className="prose-cdm">
             <p>
               Looking for the cohort residency instead? See the{" "}
-              <Link href="/fellowship">Digital Humanities Fellowship</Link> — our
+              <Link href="/fellowship">Humanities and Technology Fellowship</Link> — our
               annual programme for early-career researchers and practitioners.
             </p>
           </div>

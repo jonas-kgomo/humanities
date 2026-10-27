@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { nav, partners, site } from "@/lib/content";
+import { nav, people, site } from "@/lib/content";
 import { Mark, Wordmark } from "./Logo";
 
 export function Footer() {
@@ -17,8 +17,8 @@ export function Footer() {
               {site.tagline}
             </p>
             <p className="mt-4 max-w-sm text-[0.95rem] leading-relaxed text-mute">
-              An international consortium connecting researchers across Africa,
-              Europe, and North America.
+              A research programme on agency, interpretation, and knowledge
+              institutions under technological change.
             </p>
           </div>
 
@@ -42,10 +42,10 @@ export function Footer() {
 
           <div>
             <p className="font-sans text-xs font-semibold tracking-[0.14em] uppercase text-ink">
-              Consortium
+              Lab
             </p>
             <ul className="mt-4 space-y-3">
-              {partners.map((p) => (
+              {people.map((p) => (
                 <li key={p.name} className="text-[0.95rem] text-ink-soft">
                   {p.name}
                 </li>
@@ -56,7 +56,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-mute">
-            © {new Date().getFullYear()} Centre for Digital Humanities
+            © {new Date().getFullYear()} Centre for Humanities and Technology
           </p>
           <p className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-mute">
             Fieldbuilding & Research

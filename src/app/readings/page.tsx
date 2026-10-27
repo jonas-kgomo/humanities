@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ReadingsPage() {
   const moduleReadings = readings.filter(
-    (group) => group.category !== "Philosophy Core Readings",
+    (group) => group.category !== "Lab core readings",
   );
 
   return (
@@ -18,13 +18,13 @@ export default function ReadingsPage() {
       <PageHero
         eyebrow="Readings"
         title="A careful path into the field."
-        lead="Key readings from each curriculum module, plus a core set that frames technology, interpretation, labour, and the geopolitics of digital methods."
+        lead="Texts enter as claims to test against the three strands — not as a starting canon. Module lists sit underneath."
       />
 
       <section className="mx-auto max-w-6xl px-5 pb-12 sm:px-8">
         <div className="mb-16 border-y border-line py-12">
           <h2 className="font-sans text-xs font-semibold tracking-[0.14em] uppercase text-ink">
-            Philosophy Core Readings
+            Lab core readings
           </h2>
           <ul className="mt-6 divide-y divide-line border-y border-line">
             {philosophyCoreReadings.map((item) => (

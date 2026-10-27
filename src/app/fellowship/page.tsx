@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = {
   title: "Fellowship",
   description:
-    "The Digital Humanities Fellowship & Residency — guided research projects, seminars, and mentorship for early-career researchers.",
+    "The Humanities and Technology Fellowship & Residency — guided research projects, seminars, and mentorship for early-career researchers.",
 };
 
 export default function FellowshipPage() {
@@ -28,20 +28,20 @@ export default function FellowshipPage() {
           <p>
             The fellowship combines seminars, reading groups, mentorship, and
             collaborative research groups, with cross-institutional supervision
-            across the consortium. Particular emphasis is placed on expanding
+            across the lab. Particular emphasis is placed on expanding
             participation from underrepresented regions, especially Africa,
             while fostering collaboration with leading international
             institutions.
           </p>
           <p>
-            Fellows apply the{" "}
+            Fellows work inside the{" "}
             <Link
-              href="/teaching"
+              href="/research"
               className="text-ink underline underline-offset-3"
             >
-              core curriculum
+              research programme
             </Link>{" "}
-            through guided research projects — intellectual intensity, mutual
+            through guided projects — intellectual intensity, mutual
             mentorship, and the time required to start work that a single
             workshop cannot hold.
           </p>
@@ -50,8 +50,8 @@ export default function FellowshipPage() {
 
       <Section
         eyebrow="7.1 Guided research projects"
-        title="Choose two or three."
-        lead="Hands-on application of the conceptual frameworks developed across the curriculum modules."
+        title="Choose two."
+        lead="Each project sits inside one strand of the research programme."
         className="border-t border-line"
       >
         <ul className="divide-y divide-line border-y border-line">
@@ -160,7 +160,7 @@ export default function FellowshipPage() {
               href="/symposium"
               className="text-ink underline underline-offset-3"
             >
-              Digital Humanities Symposium
+              Humanities and Technology Symposium
             </Link>
             . Applications use short prompts that are hard to answer well with
             a generic language model.

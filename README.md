@@ -1,10 +1,6 @@
-# Centre for Digital Humanities
+# Centre for Humanities and Technology
 
-The Centre connects historical, philosophical, literary, linguistic, artistic, and social inquiry with technical design and evaluation.
-
-Humanities researchers formulate the questions, select methods, interpret findings, and determine what a successful system should do. Technical collaborators contribute implementation, measurement, and an understanding of what systems can and cannot reliably deliver.
-
-This site uses the [Centre for Digital Minds](https://github.com/jonas-kgomo/center-digital-minds) project as its template.
+Digital systems now sit inside how people organise, how cultural material is read, and how institutions decide what to trust. The Centre studies those effects in three strands — social and collective agency; culture, language, and interpretation; knowledge institutions and technological change — and tests alternatives without treating adoption as improvement.
 
 ```bash
 npm install

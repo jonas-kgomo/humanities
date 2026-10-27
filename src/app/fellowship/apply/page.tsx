@@ -6,7 +6,7 @@ import { PageHero } from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Apply · Fellowship",
   description:
-    "Application for the Digital Humanities Fellowship & Residency — written prompts designed for judgment, not polish.",
+    "Application for the Humanities and Technology Fellowship & Residency — written prompts designed for judgment, not polish.",
 };
 
 export default function FellowshipApplyPage() {

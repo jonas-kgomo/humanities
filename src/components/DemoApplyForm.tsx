@@ -132,7 +132,7 @@ export function DemoApplyForm() {
   function applySkipBasics() {
     if (name.trim().length < 2) setName("Skip Tester");
     if (!email.trim()) setEmail("skip@example.com");
-    if (!affiliation.trim()) setAffiliation("CDH demo");
+    if (!affiliation.trim()) setAffiliation("CHT demo");
     if (!role) setRole(applicantRoles[0]);
     if (!region.trim()) setRegion("Testland");
     if (!projects.length) setProjects([fellowshipProjects[0]!.title]);
@@ -531,7 +531,7 @@ export function DemoApplyForm() {
         body: JSON.stringify({
           name: name || "Skip Tester",
           email: email || "skip@example.com",
-          affiliation: affiliation || "CDH demo",
+          affiliation: affiliation || "CHT demo",
           role: role || applicantRoles[0],
           region: region || "Testland",
           projects: projects.length ? projects : [fellowshipProjects[0]!.title],

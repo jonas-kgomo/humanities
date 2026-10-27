@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
-import { Section } from "@/components/Section";
-import { partners, people } from "@/lib/content";
+import { people } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "People",
   description:
-    "Consortium scholars across the humanities, ethics, design, and higher education.",
+    "The lab: political theory, ethics, privacy law, public finance, and southern African institutions.",
 };
 
 export default function PeoplePage() {
@@ -15,8 +14,8 @@ export default function PeoplePage() {
     <>
       <PageHero
         eyebrow="People"
-        title="The consortium."
-        lead="Together, the Centre combines academic leadership, educational innovation, and experience building international collaborations around humanities inquiry and technical design."
+        title="The lab."
+        lead="A small group. Philosophy and ethics stay in the consortium; privacy law and public finance join as lab collaborators — each bringing a different way into who can act, interpret, and decide."
       />
 
       <section className="mx-auto max-w-6xl px-5 pb-8 sm:px-8">
@@ -53,23 +52,6 @@ export default function PeoplePage() {
           ))}
         </ul>
       </section>
-
-      <Section
-        eyebrow="Institutions"
-        title="Partners, equally weighted."
-        className="border-t border-line"
-      >
-        <ul className="grid gap-6 sm:grid-cols-2">
-          {partners.map((partner) => (
-            <li key={partner.name} className="border-t border-line pt-5">
-              <p className="font-sans text-lg font-semibold text-ink">
-                {partner.name}
-              </p>
-              <p className="mt-2 text-ink-soft">{partner.role}</p>
-            </li>
-          ))}
-        </ul>
-      </Section>
     </>
   );
 }

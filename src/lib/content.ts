@@ -1,38 +1,93 @@
 export const site = {
-  name: "Centre for Digital Humanities",
-  shortName: "CDH",
-  tagline: "Inquiry + Design + Evaluation",
+  name: "Centre for Humanities and Technology",
+  shortName: "CHT",
+  tagline: "Problem first. Then the method.",
   description:
-    "The Centre connects historical, philosophical, literary, linguistic, artistic, and social inquiry with technical design and evaluation.",
+    "Digital systems now sit inside how people organise, how cultural material is read, and how institutions decide what to trust. The Centre studies those effects and tests alternatives — without treating adoption as improvement.",
   missionLead:
-    "Humanities researchers formulate the questions, select methods, interpret findings, and determine what a successful system should do.",
+    "Digital systems now decide who can organise, how texts and archives are read, and which institutions get to say what counts as knowledge. The problem is not that tools exist. It is that they redistribute the ability to act, interpret, and decide — often without a way to contest the result. The Centre’s approach is three strands of work.",
 };
 
 export const partners = [
   {
-    name: "University of Johannesburg",
-    short: "UJ",
-    role: "Humanities & postgraduate leadership",
-  },
-  {
     name: "Loyola University Chicago",
     short: "Loyola",
-    role: "Ethics & interdisciplinary scholarship",
-  },
-  {
-    name: "Sciences Po",
-    short: "Sciences Po",
-    role: "Education, inquiry & public life",
-  },
-  {
-    name: "Equiano Institute",
-    short: "Equiano",
-    role: "Institution-building & technical collaboration",
+    role: "Philosophy, ethics, and interdisciplinary scholarship",
   },
 ] as const;
 
+export type ResearchStrand = {
+  slug: string;
+  title: string;
+  summary: string;
+  problem: string;
+  questions: readonly string[];
+  methods: string;
+  outputs: string;
+  test: string;
+};
+
+export const researchStrands: ResearchStrand[] = [
+  {
+    slug: "social-collective-agency",
+    title: "Social and collective agency",
+    summary:
+      "How digital systems affect the ability to organise, deliberate, cooperate, and contest a decision.",
+    problem:
+      "Institutions now depend on platforms. Group discussion is often mediated automatically. Shared digital resources and decision-making authority are unevenly held. People can lose the ability to initiate action, to be seen, or to reverse a consequential decision.",
+    questions: [
+      "Who can initiate action?",
+      "Whose contributions become visible?",
+      "How is disagreement recorded?",
+      "Can people challenge or reverse a consequential decision?",
+    ],
+    methods:
+      "Institutional analysis, interviews, participatory design, historical comparison, and evaluation of prototypes in bounded settings.",
+    outputs:
+      "Studies of technology-mediated organisations, design principles for accountable group tools, and prototypes that preserve dissent and trace decisions to supporting evidence.",
+    test: "A successful system is assessed for its effects on participation and power, not only technical performance.",
+  },
+  {
+    slug: "culture-language-interpretation",
+    title: "Culture, language, and interpretation",
+    summary:
+      "How computational systems represent cultural material — and how classification, translation, summary, and omission change what a text is taken to mean.",
+    problem:
+      "Models classify, translate, summarise, and omit. Those operations can flatten conflicting readings, alter culturally specific concepts, and turn archival gaps into apparently authoritative answers. Literary studies, history, linguistics, translation, and archival practice have to work with engineers on a bounded collection — not a claim to speak for a whole language family.",
+    questions: [
+      "How does a system handle conflicting readings of a text?",
+      "How does translation alter culturally specific concepts?",
+      "How do archival gaps become apparently authoritative answers?",
+    ],
+    methods:
+      "Projects begin with a bounded collection and a committed partner. Language selection follows available expertise, community priorities, and permissions — not an unsupported claim to represent African languages as a whole.",
+    outputs:
+      "Annotated collections, comparative interpretation studies, digital exhibitions, and evaluation datasets with documented limitations.",
+    test: "Community contributors receive compensation, attribution, and a meaningful role in decisions about access and reuse.",
+  },
+  {
+    slug: "knowledge-institutions",
+    title: "Knowledge institutions and technological change",
+    summary:
+      "How technologies reorganise expertise, education, scholarly authority, and public knowledge.",
+    problem:
+      "Libraries adopt AI search. Universities change research practice. Cultural organisations manage digital collections. The question is how institutions decide which claims to trust, how provenance is kept, and how technical systems change the division of intellectual labour. Adoption itself is not improvement.",
+    questions: [
+      "Which claims does an institution decide to trust?",
+      "How is provenance maintained when search and summary are automated?",
+      "What changes in the division of intellectual labour?",
+    ],
+    methods:
+      "Institutional case studies with historical inquiry — to separate recurring institutional problems from new technical conditions. The aim is to explain changes in practice and test useful alternatives.",
+    outputs:
+      "Institutional case studies, source-tracing methods, teaching resources, and evaluations of how people use evidence.",
+    test: "Research distinguishes access to information, understanding of information, and the authority to act on it.",
+  },
+];
+
 export const nav = [
   { href: "/about", label: "About" },
+  { href: "/research", label: "Research" },
   { href: "/teaching", label: "Teaching" },
   { href: "/people", label: "People" },
   { href: "/fellowship", label: "Fellowship" },
@@ -50,12 +105,12 @@ export type Person = {
 
 export const people: Person[] = [
   {
-    name: "Prof. Catherine F. Botha",
-    institution: "University of Johannesburg",
-    role: "Consortium Lead",
+    name: "Jonas Kgomo",
+    institution: "Equiano Institute; Cosmos Fellow",
+    role: "Lab Lead",
     focus:
-      "Philosophy of mind, ethics, and contemporary philosophy. Extensive experience supervising postgraduate researchers and leading interdisciplinary academic initiatives.",
-    image: "/people/catherine-f-botha.jpg",
+      "AI governance, political theory, and institution-building. Convenes the Centre’s research programme: how digital systems change who can act together, how cultural material is read, and how knowledge institutions decide what to trust.",
+    image: "/people/jonas-kgomo.jpg",
   },
   {
     name: "Dr. Diana Acosta Navas",
@@ -66,27 +121,18 @@ export const people: Person[] = [
     image: "/people/diana-acosta-navas.jpg",
   },
   {
-    name: "Sarah Nicole",
-    institution: "Sciences Po",
-    role: "Consortium Partner",
+    name: "Ana Paula dos Santos",
+    institution: "McGeorge School of Law, University of the Pacific",
+    role: "Lab Collaborator",
     focus:
-      "Teaches Critical Thinking in the Age of AI in the Master's programme in Finance & Strategy. Bridges philosophy, education, governance, and emerging AI challenges.",
-    image: "/people/sarah-nicole.jpg",
+      "Global privacy law, data protection, and the legal stakes of AI and cybersecurity. Work on cross-border data flows, the harmonisation of privacy regimes, and privacy as both a legal right and a culturally situated freedom. J.S.D. candidate; licensed in New York and Brazil.",
   },
   {
-    name: "Jonas Kgomo",
-    institution: "Equiano Institute; Cosmos Fellow",
-    role: "Consortium Partner",
+    name: "Dr. Sombo Muzata",
+    institution: "James Madison University",
+    role: "Lab Collaborator",
     focus:
-      "AI governance, philosophy, and institution-building, with experience convening interdisciplinary collaborations and developing international research initiatives.",
-    image: "/people/jonas-kgomo.jpg",
-  },
-  {
-    name: "Dr. Asheel Singh",
-    institution: "University of Johannesburg",
-    role: "Consortium Partner",
-    focus:
-      "Applied ethics, bioethics, population ethics, environmental ethics, meaning in life, African philosophy, and Eastern philosophical approaches.",
+      "Public financial management, public debt, anti-corruption, and economic development, with Zambia and southern Africa as the empirical ground. Allocation, accountability, and whose claims count — including how public budgets and political gatekeeping decide who may act. Assistant Professor of Political Science; Co-Director, MPA.",
   },
 ];
 
@@ -499,29 +545,29 @@ export const themes = curriculumModules.map((module) => ({
 
 export const philosophyCoreReadings: (Reading & { note: string })[] = [
   {
-    title: "The Question Concerning Technology",
-    author: "Martin Heidegger",
-    note: "Treats technology as a mode of revealing rather than a pile of tools — a starting point for asking what digital methods do to inquiry itself.",
+    title: "Our Long Walk to Economic Freedom",
+    author: "Johan Fourie",
+    note: "2021 — economic history from southern Africa: how rules have long decided whose freedom counts, and who may build.",
+  },
+  {
+    title: "Taking AI Welfare Seriously",
+    author: "Robert Long et al.",
+    note: "2024 — some researchers argue that AI systems may soon have interests of their own. Agency and contestation may not stay human-only.",
   },
   {
     title: "How We Think",
     author: "N. Katherine Hayles",
-    note: "Maps the shift from print-centred humanities to technogenetic practices of reading, writing, and interpretation alongside machines.",
+    note: "Maps the shift from print-centred humanities to practices of reading and interpretation alongside machines.",
   },
   {
-    title: "New Digital Worlds",
-    author: "Roopika Risam",
-    note: "Argues that digital humanities is already geopolitical: whose archives, languages, and institutions get to define the field.",
+    title: "On Liberty",
+    author: "John Stuart Mill",
+    note: "1859 — one account of freedom as adjacent plots. Useful as a claim to test, not as the lab’s starting point.",
   },
   {
-    title: "Graphesis",
-    author: "Johanna Drucker",
-    note: "Shows visualisation as knowledge production. A graph is an argument, not a transparent window onto data.",
-  },
-  {
-    title: "Fragment on Machines",
-    author: "Karl Marx",
-    note: "A reminder that automated systems reorganise labour and authority — including the labour of interpretation.",
+    title: "Republicanism: A Theory of Freedom and Government",
+    author: "Philip Pettit",
+    note: "1997 — enclosure can shrink options without a single act of interference. One vocabulary for the enclosure problem.",
   },
 ];
 
@@ -540,7 +586,7 @@ export const readings = [
     ),
   })),
   {
-    category: "Philosophy Core Readings",
+    category: "Lab core readings",
     items: philosophyCoreReadings,
   },
 ];
@@ -557,20 +603,12 @@ function dedupeReadings(items: Reading[]): Reading[] {
 
 export const teachings = [
   {
-    title: "Critical Thinking in the Age of AI",
-    institution: "Sciences Po",
-    programme: "Master's in Finance & Strategy",
-    lead: "Sarah Nicole",
+    title: "Who can act, and who can reverse it",
+    institution: "Centre for Humanities and Technology",
+    programme: "Lab research seminar",
+    lead: "Jonas Kgomo",
     description:
-      "A graduate seminar exploring how AI reshapes judgment, evidence, and decision-making — and what critical thinking requires when machines participate in knowledge production.",
-  },
-  {
-    title: "Digital Humanities Research Seminar",
-    institution: "University of Johannesburg",
-    programme: "Postgraduate Research Seminar",
-    lead: "Prof. Catherine F. Botha",
-    description:
-      "Close reading, method, and research supervision on how historical, philosophical, and literary questions should govern digital projects — with emphasis on building research capacity across Africa.",
+      "How digital systems affect the ability to organise, deliberate, and contest decisions — institutional dependence on platforms, control over shared resources, and the distribution of decision-making authority.",
   },
   {
     title: "Ethics, Technology & Society",
@@ -581,35 +619,35 @@ export const teachings = [
       "Philosophical inquiry into the ethical stakes of technical systems, connecting classical ethical frameworks to contemporary design and institutional questions.",
   },
   {
-    title: "Methods & Evaluation Reading Group",
-    institution: "Equiano Institute / Consortium",
-    programme: "Open consortium series",
-    lead: "Jonas Kgomo",
+    title: "Privacy, Data Protection, and Cross-Border AI",
+    institution: "McGeorge School of Law",
+    programme: "Lab reading group",
+    lead: "Ana Paula dos Santos",
     description:
-      "A cross-institutional reading group on what humanities questions require of implementation and measurement — and what technical systems cannot reliably deliver.",
+      "How privacy regimes in Brazil, the United States, and the European Union treat personal data when AI systems move information across borders — and what that does to the right to be let alone.",
+  },
+  {
+    title: "Allocation, Debt, and Whose Claims Count",
+    institution: "James Madison University",
+    programme: "Lab case series",
+    lead: "Dr. Sombo Muzata",
+    description:
+      "Public financial management, anti-corruption, and southern African cases in which budgets, debt, and political gatekeeping decide who may act — a live test of how institutions distribute the authority to decide.",
   },
 ] as const;
 
 export const fellowshipProjects = [
   {
-    title: "Historical methods",
-    body: "Stage a small archive or corpus study and document the interpretive limits of the source base.",
+    title: "Social and collective agency",
+    body: "Study a technology-mediated organisation or group tool. Ask who can initiate action, whose contributions become visible, and whether a consequential decision can be challenged or reversed.",
   },
   {
-    title: "Philosophy",
-    body: "Write a position paper on what would count as a successful system in your domain — and who decides.",
+    title: "Culture, language, and interpretation",
+    body: "Work with a bounded collection and a committed partner. Document how classification, translation, summary, or omission changes interpretation — and what a speaker community or close reading could still falsify.",
   },
   {
-    title: "Literary & linguistic methods",
-    body: "Design an evaluation that a close reading or a speaker community could still falsify.",
-  },
-  {
-    title: "Artistic specification",
-    body: "Write a brief for a technical collaborator: what to implement, how it should behave, and what to refuse.",
-  },
-  {
-    title: "Social evaluation",
-    body: "Map who is served and who is excluded by a proposed digital method in your institution or region.",
+    title: "Knowledge institutions",
+    body: "Write an institutional case — a library, university, or cultural organisation adopting a technical system. Separate access to information from understanding it, and from the authority to act on it.",
   },
 ] as const;
 
@@ -639,7 +677,7 @@ export const fellowshipCommunity = [
   },
   {
     title: "Conference attendance",
-    body: "Digital humanities, STS, and related scholarly meetings.",
+    body: "Humanities, STS, and related scholarly meetings.",
   },
   {
     title: "Mentorship",
@@ -692,7 +730,7 @@ export const fellowshipApplicationQuestions = [
   },
   {
     id: "module",
-    label: "Weakest assumption in a CDH module — for your context",
+    label: "Weakest assumption in a CHT module — for your context",
     help: "Pick one curriculum module. Name the assumption that travels least well into your institution, region, or discipline. What would have to be true for that module to matter where you work?",
     maxWords: 140,
   },

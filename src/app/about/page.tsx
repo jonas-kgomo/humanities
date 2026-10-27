@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
-import { partners, site } from "@/lib/content";
+import { researchStrands, site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -13,93 +13,101 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About the Centre"
-        title="Connecting inquiry with design."
-        lead="The Centre for Digital Humanities is a proposed international research consortium where humanities researchers and technical collaborators share one agenda — from the question to the evaluation."
+        eyebrow="About the lab"
+        title="The problem, then the approach."
+        lead="Digital systems now sit inside how people organise, how cultural material is read, and how institutions decide what to trust. Existing arrangements already decide who may act, whose reading counts, and which claims become official."
       />
 
       <section className="mx-auto max-w-6xl px-5 pb-8 sm:px-8">
         <div className="prose-cdm grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <p>
-              The Centre will connect historical, philosophical, literary,
-              linguistic, artistic, and social inquiry with technical design
-              and evaluation.
+              That is the problem. Platforms mediate group discussion.
+              Institutions depend on them for work that used to be their own.
+              Models classify, translate, summarise, and omit — and those
+              operations change what a text, an archive, or a language is taken
+              to mean.
             </p>
             <p>
-              Humanities researchers will help formulate the questions, select
-              methods, interpret findings, and determine what a successful
-              system should do.
+              Libraries, universities, and cultural organisations are already
+              changing how they search, teach, and keep collections. Access to
+              information is not the same as understanding it, and neither is
+              the same as the authority to act on it.
             </p>
           </div>
           <div>
             <p>
-              Technical collaborators will contribute implementation,
-              measurement, and an understanding of what systems can and cannot
-              reliably deliver.
+              The approach is a research programme in three strands: social and
+              collective agency; culture, language, and interpretation;
+              knowledge institutions and technological change.
             </p>
             <p>
-              Rather than establishing a new institute within a single
-              university, CDH serves as a collaborative network connecting
-              researchers across the University of Johannesburg, Loyola
-              University Chicago, Sciences Po, and the Equiano Institute.
+              Each strand names questions, methods, and what would count as a
+              useful output. Humanities researchers formulate the question and
+              decide what success would mean. Technical collaborators implement,
+              measure, and state what a system can and cannot reliably deliver.
+              Adoption is not treated as improvement.
             </p>
           </div>
         </div>
       </section>
 
       <Section
-        eyebrow="Why a consortium"
-        title="Complementary expertise, shared agenda."
-        lead="The consortium combines academic leadership, educational innovation, and experience building international collaborations around the humanities and technical design."
+        eyebrow="Research programme"
+        title="Three ways into the same collision."
         className="border-t border-line"
       >
-        <ul className="grid gap-px bg-line sm:grid-cols-2">
-          {partners.map((partner) => (
-            <li key={partner.name} className="bg-paper px-6 py-8">
-              <p className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-mute">
-                Equal partner
+        <ul className="grid gap-px bg-line md:grid-cols-3">
+          {researchStrands.map((strand) => (
+            <li key={strand.slug} className="bg-paper px-6 py-8">
+              <p className="font-display text-2xl text-ink">{strand.title}</p>
+              <p className="mt-4 text-[1.05rem] leading-relaxed text-ink-soft">
+                {strand.summary}
               </p>
-              <p className="mt-3 font-display text-2xl text-ink">
-                {partner.name}
-              </p>
-              <p className="mt-2 text-[1.05rem] text-ink-soft">{partner.role}</p>
             </li>
           ))}
         </ul>
+        <div className="mt-10">
+          <Link
+            href="/research"
+            className="font-sans text-sm font-semibold text-ink underline underline-offset-4 decoration-line-strong transition-colors hover:decoration-ink"
+          >
+            Full programme — questions, methods, outputs ↗
+          </Link>
+        </div>
       </Section>
 
       <Section
-        eyebrow="Long-term vision"
-        title="A lasting international network."
+        eyebrow="How the lab works"
+        title="Bounded projects. Contestable results."
         className="border-t border-line"
       >
         <div className="prose-cdm">
           <p>
-            Beyond the inaugural fellowship and the annual symposium, the Centre
-            intends to develop collaborative research projects, method
-            workshops, visiting scholar programmes, educational resources, and
-            partnerships with universities, research institutes, studios,
-            libraries, and philanthropic organisations.
+            Work begins with a setting that can be evaluated: an organisation,
+            a collection with a committed partner, an institution changing its
+            practice. Language selection follows available expertise, community
+            priorities, and permissions.
           </p>
           <p>
-            The aim is to become a leading international network for digital
-            humanities work in which interpretation is not an afterthought to
-            implementation — and in which technical limits are stated plainly.
+            We do not start from a European canon and apply it outward. Texts
+            enter as claims to test. Southern African and other institutional
+            cases keep the work honest about whose contributions become visible
+            and whose claims have counted in practice.
           </p>
         </div>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link
-            href="/teaching"
+            href="/people"
             className="inline-flex items-center justify-center bg-ink px-5 py-3 font-sans text-sm font-semibold text-paper transition-transform duration-150 hover:bg-accent active:scale-[0.98]"
           >
-            Teaching & modules
+            Meet the lab
           </Link>
           <Link
-            href="/people"
+            href="/research"
             className="inline-flex items-center justify-center border border-line-strong px-5 py-3 font-sans text-sm font-semibold text-ink transition-colors duration-200 hover:border-ink"
           >
-            Meet the team
+            Research programme
           </Link>
         </div>
       </Section>
